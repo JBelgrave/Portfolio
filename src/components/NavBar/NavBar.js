@@ -5,13 +5,10 @@ import logo from '../Assets/Logo.png';
 export default function NavBar() {
   return (
     <nav>
-      <Link className='navLogo navBarLi' to='landingpage'>
-        <img className='logo' src={logo}></img>
-      </Link>
       <div className='navBarText'>
         <ul>
-          <Link className='navBarLi' to='landingpage'>
-            Landing Page
+          <Link className='navLogo navBarLi' to='home'>
+            <img className='logo' src={logo}></img>
           </Link>
           <Link className='navBarLi' to='about'>
             About
