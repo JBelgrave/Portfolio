@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from 'C:/Users/Udon/Documents/Development/portfolio/src/components/Assets/Logo.png';
+import logo from '../Assets/Logo.png';
 
 export default function NavBar() {
   return (
