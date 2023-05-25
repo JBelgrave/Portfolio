@@ -1,38 +1,206 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #222222;
+  color: white;
+  font-family: helvetica;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  border: 3px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
+.page {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 3px solid purple;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.navBar {
+  position: fixed;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  box-shadow: 0 5px 20px -15px black;
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+  height: 90px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navBar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+.navBarLi {
+  margin-right: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color:white;
+  text-decoration: none;
+}
+
+.navLogo {
+  margin-left: 40px;
+}
+
+.resume {
+  color: inherit;
+  text-decoration: none;
+}
+
+.resume:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  max-width: 75px;
+}
+
+.navHamburger {
+  margin-right: 40px;
+  cursor: pointer;
+  font-size: 35px;
+}
+
+@media (max-width: 850px) {
+
+  .navHamburger {
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hamburgerText {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: 35px;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(34, 34, 34, .9);
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .navHamburger svg,
+  .navLogo {
+    z-index: 100;
+  }
+
+  .navBar .navBarLi:hover {
+    color: #cccccc;
+  }
+
+  .navBar {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .navBarText {
+    animation: slide-in .5s forwards;
+    -webkit-animation: slide-in .5s forwards;
+  }
+
+  .navHamburger {
+    margin-right: 40px;
+    cursor: pointer;
+    font-size: 35px;
+    animation: slide-out .5s forwards;
+    -webkit-animation: slide-out .5s forwards;
+  }
+
+  @keyframes slide-in {
+    0% {
+      transform: translateX(300%);
+    }
+
+    50% {
+      transform: translateX(300%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @-webkit-keyframes slide-in {
+    0% {
+      -webkit-transform: translateX(300%);
+    }
+
+    50% {
+      -webkit-transform: translateX(300%);
+    }
+
+    100% {
+      -webkit-transform: translateX(0%);
+    }
+  }
+
+
+  @keyframes slide-out {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(300%);
+    }
+  }
+
+  @-webkit-keyframes slide-out {
+    0% {
+      -webkit-transform: translateX(0%);
+    }
+
+    100% {
+      -webkit-transform: translateX(300%);
+    }
+  }
+
+  @media (max-width: 850px) {
+    .navBarText {
+      animation: slide-out 0.5s forwards;
+      -webkit-animation: slide-out 0.5s forwards;
+    }
+
+    .navHamburger {
+      display: flex;
+      position: absolute;
+      right: 0px;
+      animation: slide-in 0.5s forwards;
+      -webkit-animation: slide-in 0.5s forwards;
+    }
+  }
+
+  .navBarText {
+    animation: slide-in .5s forwards;
+    -webkit-animation: slide-in .5s forwards;
+    position: absolute;
+    right: 0px;
   }
 }
